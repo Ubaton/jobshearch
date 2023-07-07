@@ -20,6 +20,8 @@ const Popularjobs = () => {
     num_pages: "1",
   });
 
+  console.log(data);
+
   const [selectedJob, setSelectedJob] = useState();
 
   const handleCardPress = (item) => {
@@ -38,7 +40,7 @@ const Popularjobs = () => {
 
       <View style={styles.cardsContainer}>
         {isLoading ? (
-          <ActivityIndicator size='large' color={COLORS.primary} />
+          <ActivityIndicator size="large" color={COLORS.primary} />
         ) : error ? (
           <Text>Something went wrong</Text>
         ) : (
