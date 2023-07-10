@@ -20,7 +20,7 @@ import {
 import { COLORS, icons, SIZES } from "../../constants";
 import useFetch from "../../hook/useFetch";
 
-const tabs = ["About", "Qualifications", "Responsibiltes"];
+const tabs = ["About", "Qualifications", "Responsibilities"];
 
 const JobDetails = () => {
   const params = useSearchParams();
@@ -46,7 +46,7 @@ const JobDetails = () => {
           <Specifics
             title="Qualifications"
             points={
-              data.length > 0 ? data[0].job_highlights?.qualifications : ["N/A"]
+              data.length > 0 ? data[0].job_highlights?.Qualifications : ["N/A"]
             }
           />
         );
@@ -59,7 +59,16 @@ const JobDetails = () => {
           />
         );
       case "Responsibilities":
-        return <Text>Responsibilities Content</Text>;
+        return (
+          <Specifics
+            title="Qualifications"
+            points={
+              data.length > 0
+                ? data[0].job_highlights?.Responsibilities
+                : ["N/A"]
+            }
+          />
+        );
       default:
         return null;
     }
